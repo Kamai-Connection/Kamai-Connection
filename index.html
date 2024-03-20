@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KK App</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to Kamai Konnect</h1>
+    <button onclick="openModal('/register_worker')">Register Worker</button>
+    <button onclick="openModal('/register_businessman')">Register Businessman</button>
+    <button onclick="openModal('/display_workers')">Display All Workers</button>
+    <button onclick="openModal('/display_businessmen')">Display All Businessmen</button>
+    <button onclick="openModal('/find_jobs')">Find Suitable Job Offers</button>
+    <button onclick="openModal('/display_ratings')">Display Worker Ratings</button>
+  </div>
+  <!-- Modals will be loaded dynamically here -->
+  <div id="modalContainer"></div>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const modalButtons = document.querySelectorAll('[onclick^="openModal"]');
+      modalButtons.forEach(button => {
+        button.addEventListener('click', function () {
+          openBrowser();
+        });
+      });
+    });
+
+    function openBrowser() {
+      window.open('http://127.0.0.1:5000', '_blank');
+    }
+  </script>
+</body>
+</html>

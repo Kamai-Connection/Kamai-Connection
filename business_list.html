@@ -1,0 +1,12 @@
+<div class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>List of Businessmen</h2>
+      <ul>
+        {% for businessman in businessmen %}
+        <li>Name: {{ businessman.name }}, Contact: {{ businessman.contact }}, Work Needed: {{ businessman.work_needed }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  

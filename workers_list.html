@@ -1,0 +1,12 @@
+<div class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>List of Workers</h2>
+      <ul>
+        {% for worker in workers %}
+        <li>Name: {{ worker.name }}, Skills: {{ worker.skills|join(', ') }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  

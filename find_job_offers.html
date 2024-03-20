@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Suitable Job Offers</title>
+    <!-- Add any CSS stylesheets or meta tags here -->
+</head>
+<body>
+    <div class="container">
+        <h1>Matching Job Offers</h1>
+        {% if matching_businessmen %}
+            <ul>
+                {% for businessman in matching_businessmen %}
+                    <li>
+                        <strong>Name:</strong> {{ businessman.name }}, 
+                        <strong>Contact:</strong> {{ businessman.contact }}, 
+                        <strong>Work Needed:</strong> {{ businessman.work_needed }}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No matching job offers found.</p>
+        {% endif %}
+    </div>
+    <!-- Add any JavaScript files or scripts here -->
+</body>
+</html>
